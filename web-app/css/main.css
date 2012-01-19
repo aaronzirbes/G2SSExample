@@ -600,3 +600,7 @@ a.skip {
     min-width: 120px;
     text-align: right;
 }
+
+.form p.form-buttons {
+    text-align: right;
+}

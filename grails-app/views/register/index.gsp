@@ -1,55 +1,58 @@
 <head>
-	<meta name='layout' content='register'/>
+	<meta name='layout' content='main'/>
 	<title><g:message code='spring.security.ui.register.title'/></title>
+	<style>
+	    .errors {
+	        margin: 0;
+	    }
+	    .form p label {
+	        min-width: 140px;
+	    }
+	</style>
 </head>
-
 <body>
-
-<p/>
-
-<s2ui:form width='650' height='300' elementId='loginFormContainer'
-           titleCode='spring.security.ui.register.description' center='true'>
-
-<g:form action='register' name='registerForm'>
-
 	<g:if test='${emailSent}'>
-	<br/>
-	<g:message code='spring.security.ui.register.sent'/>
+    	<br/>
+    	<g:message code='spring.security.ui.register.sent'/>
 	</g:if>
 	<g:else>
-
-	<br/>
-
-	<table>
-	<tbody>
-
-		<s2ui:textFieldRow name='username' labelCode='user.username.label' bean="${command}"
-                         size='40' labelCodeDefault='Username' value="${command.username}"/>
-
-		<s2ui:textFieldRow name='email' bean="${command}" value="${command.email}"
-		                   size='40' labelCode='user.email.label' labelCodeDefault='E-mail'/>
-
-		<s2ui:passwordFieldRow name='password' labelCode='user.password.label' bean="${command}"
-                             size='40' labelCodeDefault='Password' value="${command.password}"/>
-
-		<s2ui:passwordFieldRow name='password2' labelCode='user.password2.label' bean="${command}"
-                             size='40' labelCodeDefault='Password (again)' value="${command.password2}"/>
-
-	</tbody>
-	</table>
-
-	<s2ui:submitButton elementId='create' form='registerForm' messageCode='spring.security.ui.register.submit'/>
-
+	    <div class="form">
+	    <h1><g:message code='spring.security.ui.register.title'/></h1>
+	    
+        <g:form action='register' name='registerForm'>
+            <p>
+				<label for='username'><g:message code="user.username.label"/>:</label>
+				<g:textField name="username" value="${command.username}" />
+			</p>
+            <p>
+				<label for='email'><g:message code="user.email.label"/>:</label>
+				<g:textField name="email" value="${command.email}" />
+			</p>
+            <p>
+				<label for='password'><g:message code="user.password.label"/>:</label>
+				<g:textField name="password" value="${command.password}" />
+			</p>
+            <p>
+				<label for='password2'><g:message code="user.password2.label"/>:</label>
+				<g:textField name="password2" value="${command.password2}" />
+			</p>
+			<p class="form-buttons">
+				<input type='submit' id="submit" value='${message(code: "spring.security.ui.register.submit")}'/>
+			</p>
+    	    <g:hasErrors bean="${command}">
+    	       <div class="errors">
+    	           <g:renderErrors bean="${command}" />
+    	       </div>
+    	    </g:hasErrors>
+    	    <p>
+    	        <g:link controller="login">Login as existing user</g:link>
+    	    </p>
+        </g:form>
+        </div>
 	</g:else>
-
-</g:form>
-
-</s2ui:form>
-
-<script>
-$(document).ready(function() {
-	$('#username').focus();
-});
-</script>
-
+    <script>
+    $(document).ready(function() {
+    	$('#username').focus();
+    });
+    </script>
 </body>
