@@ -30,11 +30,11 @@
 			</p>
             <p>
 				<label for='password'><g:message code="user.password.label"/>:</label>
-				<g:textField name="password" value="${command.password}" />
+				<g:passwordField name="password" value="${command.password}" />
 			</p>
             <p>
 				<label for='password2'><g:message code="user.password2.label"/>:</label>
-				<g:textField name="password2" value="${command.password2}" />
+				<g:passwordField name="password2" value="${command.password2}" />
 			</p>
 			<p class="form-buttons">
 				<input type='submit' id="submit" value='${message(code: "spring.security.ui.register.submit")}'/>
