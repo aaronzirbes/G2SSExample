@@ -583,3 +583,20 @@ a.skip {
 	position: absolute;
 	left: -9999px;
 }
+
+.form {
+    margin: 20px;
+    padding: 20px 50px;
+    border: 1px solid #ddd;
+    display: inline-block;
+}
+
+.form p {
+    margin: 10px 0;
+}
+
+.form p label {
+    display: inline-block;
+    min-width: 120px;
+    text-align: right;
+}
