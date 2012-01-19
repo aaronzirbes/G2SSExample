@@ -62,6 +62,7 @@ grails.hibernate.cache.queries = true
 // set per-environment serverURL stem for creating absolute links
 environments {
     development {
+        grails.mail.port = com.icegreen.greenmail.util.ServerSetupTest.SMTP.port
         grails.logging.jul.usebridge = true
     }
     production {

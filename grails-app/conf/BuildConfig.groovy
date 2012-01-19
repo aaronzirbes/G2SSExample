@@ -37,6 +37,7 @@ grails.project.dependency.resolution = {
     }
 
     plugins {
+        compile ":greenmail:1.3.1"
         compile ":spring-security-core:1.2.7.1"
         compile ":spring-security-ui:0.1.2"
         
