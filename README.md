@@ -4,9 +4,9 @@ This project is a working demo of using Spring Security plugins with Grails.
 Versions
 --------
 
-Grails: 2.0
-Spring Security Core: 1.2.7.1
-Spring Security Ui: 0.1.2
+ * Grails: 2.0
+ * Spring Security Core: 1.2.7.1
+ * Spring Security Ui: 0.1.2
 
 Steps followed in developing this project
 -----------------------------------------
